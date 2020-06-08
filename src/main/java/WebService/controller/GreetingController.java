@@ -1,4 +1,4 @@
-package WebService;
+package WebService.controller;
 
 
 
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import WebService.service.Greeting;
+
 @RestController
 public class GreetingController {
 
@@ -20,7 +22,7 @@ public class GreetingController {
 	
 
 	@GetMapping("/greeting")
-	public Greeting greeting() throws MalformedURLException 
+	public WebService.service.Greeting greeting() throws MalformedURLException 
 	{
 		return new Greeting(counter.incrementAndGet(), template, age);
 	}

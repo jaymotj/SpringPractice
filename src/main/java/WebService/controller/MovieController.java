@@ -25,7 +25,7 @@ public class MovieController {
     
     @RequestMapping(value="/searchById", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public Movie searchByeId(String Id) {
+    public Movie searchById(String Id) {
         
     	return omdbService.searchById(Id);
     }

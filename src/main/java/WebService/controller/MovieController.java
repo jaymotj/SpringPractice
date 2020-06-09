@@ -22,4 +22,11 @@ public class MovieController {
         
         return omdbService.searchByTitle(title);
     }
+    
+    @RequestMapping(value="/searchById", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public Movie searchByeId(String Id) {
+        
+    	return omdbService.searchById(Id);
+    }
 }

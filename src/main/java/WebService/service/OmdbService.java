@@ -11,7 +11,7 @@ import WebService.domain.Movie;
 @Service
 public class OmdbService {
 
-    @Value("${omdb.key")
+    @Value("${omdb.key}")
     String omdbKey;
     
     @Value("${omdb.url}")
@@ -29,9 +29,14 @@ public class OmdbService {
     
     public Movie searchByTitle(String title) {
       
-;       String url = omdbUrl + "?apikey=" + omdbKey + "&t=" + title;
-        return restTemplate.getForObject(url, Movie.class);
+       String url = omdbUrl + "?apikey=" + omdbKey + "&t=" + title;
+        return restTemplate.getForObject(url, Movie.class);        
+    }
+    
+ public Movie searchById(String Id) {
         
-        
+        String url = omdbUrl + "?apikey=" + omdbKey + "&i=" + Id;
+          return restTemplate.getForObject(url, Movie.class);
+          
     }
 }
